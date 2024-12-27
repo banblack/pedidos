@@ -1,0 +1,140 @@
+/* Importar fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif; /* Usar la fuente Roboto */
+    background-color: #808080; /* Fondo plomo */
+}
+
+/* Estilos para el header y footer */
+header, footer {
+    background-color: #808080; /* Fondo plomo */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid white; /* Borde blanco para separarlo */
+}
+
+/* Estilos específicos para el header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Título del header */
+header h1 {
+    margin: 0;
+    flex: 1;
+}
+
+/* Menú principal */
+header .main-nav {
+    flex: 2;
+}
+
+header .main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .main-nav ul li {
+    margin-right: 20px;
+}
+
+header .main-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Barra de búsqueda */
+header .search-bar {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+header .search-bar input {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #666;
+    color: white;
+}
+
+header .menu-toggle {
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    display: none;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* Estilos para las secciones */
+main {
+    padding: 20px;
+}
+
+.section {
+    background-color: #666;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 5px;
+    color: white;
+}
+
+/* Ajustar header para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav, .search-bar {
+        display: none; /* Ocultar el menú principal y la barra de búsqueda en pantallas pequeñas */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú en pantallas pequeñas */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
+
+/* Estilo para el sidebar toggle en pantallas pequeñas */
+.sidebar {
+    display: none; /* Por defecto, el sidebar está oculto */
+}
+
+.sidebar.active {
+    display: block; /* Mostrar el sidebar cuando se active */
+}
