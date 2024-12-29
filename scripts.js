@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mover los elementos del menú al sidebar cuando sea necesario
     function moveMenuItems() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 768 && mainNav.children.length > 0) {
             while (mainNav.firstChild) {
                 sidebarNav.appendChild(mainNav.firstChild);
             }
-        } else {
+        } else if (window.innerWidth > 768 && sidebarNav.children.length > 0) {
             while (sidebarNav.firstChild) {
                 mainNav.appendChild(sidebarNav.firstChild);
             }
@@ -26,5 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Alternar la visibilidad del sidebar al hacer clic en el botón toggle
     menuToggle.addEventListener('click', function () {
         sidebar.classList.toggle('active');
+    });
+
+    // Cerrar el sidebar al hacer clic fuera de él
+    document.addEventListener('click', function (event) {
+        if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
     });
 });
