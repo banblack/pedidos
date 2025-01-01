@@ -19,12 +19,16 @@ header, footer {
     text-align: center;
 }
 
-/* Header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+header .logo {
+    height: 50px; /* Ajusta el tamaño del logo según sea necesario */
+    margin-right: 20px;
 }
 
 header h1 {
@@ -69,7 +73,7 @@ header .menu-toggle {
     display: none; /* Ocultar el botón de menú en pantallas grandes */
 }
 
-/* Sidebar */
+/* Estilos para el sidebar */
 .sidebar {
     position: fixed;
     left: -250px;
@@ -83,12 +87,11 @@ header .menu-toggle {
     overflow-y: auto;
 }
 
-/* Sidebar activo */
 .sidebar.active {
     left: 0;
 }
 
-/* Main y secciones */
+/* Estilos para el main */
 main {
     padding: 20px;
 }
